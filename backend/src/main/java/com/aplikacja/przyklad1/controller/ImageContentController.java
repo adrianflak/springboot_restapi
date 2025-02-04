@@ -58,7 +58,7 @@ public class ImageContentController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponsEntity<HttpStatus> deleteContent(@PathVariable String id) {
+    public ResponseEntity<HttpStatus> deleteContent(@PathVariable String id) {
         try {
             imageContentRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
