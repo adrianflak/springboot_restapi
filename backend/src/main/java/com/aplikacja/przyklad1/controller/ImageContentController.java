@@ -64,7 +64,7 @@ public class ImageContentController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SEVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
