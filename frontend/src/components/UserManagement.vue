@@ -43,7 +43,7 @@ methods: {
     },
     deleteUser(id) {
         axios.detele('http://135.224.16.69:8080/api/users/${id}')
-        then(() => {
+        .then(() => {
             this.users = this.users.filter(user => user.id !== id)
     });
 
