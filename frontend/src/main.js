@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import { createI18n } from 'vue-i18n';
 
 
-function locadLocaleMessages() {
+function loadLocaleMessages() {
     const locales = require.context('./assets/i18n', true, /[A-Za-z0-9-_,\s]+\.json$/i);
     const messages = {};
     locales.keys().forEach(key => {
@@ -35,7 +35,7 @@ function locadLocaleMessages() {
 const i18n = createI18n({
 	locale: 'en',
 	fallbackLocale: 'en',
-	messages: locadLocaleMessages()
+	messages: loadLocaleMessages()
 }); 
 
 
