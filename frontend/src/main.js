@@ -12,7 +12,7 @@ function loadLocaleMessages() {
     console.log("Klucze:", locales.keys());
     locales.keys().forEach(key => {
         console.log("Klucze:", locales.key);
-        const matched = key.match(/([A-Za-z0-9-_]+)\./i);
+        const matched = key.match(/([A-Za-z0-9-_]+)\.json$/i);
         console.log("Wynik:", matched);
         if (matched && matched.length > 1) {
             const locale = matched[1];
