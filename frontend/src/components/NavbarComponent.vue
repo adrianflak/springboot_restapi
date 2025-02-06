@@ -39,6 +39,8 @@
       </b-collapse>
     </b-navbar>
   </div>
+  <p>TEST</p>
+  <a href="/about">{{ $t('navbar.about') }}</a>
 </template>
 
 <script>
