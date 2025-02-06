@@ -9,13 +9,18 @@ import { createI18n } from 'vue-i18n';
 function loadLocaleMessages() {
     const locales = require.context('./assets/i18n', true, /[A-Za-z0-9-_,\s]+\.json$/i);
     const messages = {};
+    console.log("Klucze:", locales.keys());
     locales.keys().forEach(key => {
+        console.log("Klucze:", locales.key);
         const matched = key.match(/([A-Za-z0-9-_]+)\./i);
+        console.log("Wynik:", matched);
         if (matched && matched.length > 1) {
             const locale = matched[1];
             messages[locale] = locales(key).default;
+            console.log("Tłumaczenie:", messages[locale]);
         }
     });
+    console.log("Wszystko:", messages);
     return messages;
 }
 
