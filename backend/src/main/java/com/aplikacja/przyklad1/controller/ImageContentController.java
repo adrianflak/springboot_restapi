@@ -11,7 +11,7 @@ import com.aplikacja.przyklad1.repository.ImageContentRepository;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://135.224.16.69:8081")
+@CrossOrigin(origins = "http://172.169.224.102:8081")
 @RestController
 @RequestMapping("/api/content")
 public class ImageContentController {

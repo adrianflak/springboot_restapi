@@ -28,13 +28,13 @@ export default {
 },
 methods: {
     fetchUsers() {
-        axios.get('http://135.224.16.69:8080/api/users')
+        axios.get('http://172.169.224.102:8080/api/users')
         .then(response => {
             this.users = response.data;
         });
     },
     addUser() {
-        axios.post('http://135.224.16.69:8080/api/users', this.newUser)
+        axios.post('http://172.169.224.102:8080/api/users', this.newUser)
         .then(() => {
             this.users.push(this.newUser);
             this.newUser = {name: '', email: ''};
@@ -42,7 +42,7 @@ methods: {
         });
     },
     deleteUser(id) {
-        axios.detele('http://135.224.16.69:8080/api/users/${id}')
+        axios.detele('http://172.169.224.102:8080/api/users/${id}')
         .then(() => {
             this.users = this.users.filter(user => user.id !== id)
     });
