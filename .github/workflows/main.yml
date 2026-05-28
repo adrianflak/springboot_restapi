@@ -26,11 +26,11 @@ jobs:
         
       - name: Accept Host Key
         run: |
-          mkdir -p ~/.ssh
-          # ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          chmod 700 ~/.ssh
-          chmod 644 ~/.ssh/known_hosts
+          # mkdir -p ~/.ssh
+          # # ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+          # ssh-keyscan github.com >> ~/.ssh/known_hosts
+          # chmod 700 ~/.ssh
+          # chmod 644 ~/.ssh/known_hosts
         
       - name: Executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.2.0
@@ -41,6 +41,11 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             ls -lah
+
+            mkdir -p ~/.ssh
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+            chmod 700 ~/.ssh
+            chmod 644 ~/.ssh/known_hosts
             
             cd ~            
             if [ ! -d "springboot_restapi/.git" ]; then
