@@ -65,7 +65,7 @@ jobs:
             cd ..
             sudo docker-compose down
             sudo docker-compose up -d --build
-            cd springboot_restapi/frontend
+            cd /frontend
             npm run serve
 
             
