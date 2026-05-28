@@ -56,7 +56,19 @@ jobs:
               git pull origin main
               cd ..
             fi
+            
+            ls -la
+            sudo apt install node npm -y
+            cd backend
+            mvn clean package
+            sudo socker build --rm -t spring-mongodb-image -f Dockerfile .
+            cd ..
+            sudo docker-compose down
+            sudo docker-compose up -d --build
+            cd springboot_restapi/frontend
+            npm run serve
 
+            
             #cd java
             #git pull origin main
             #cd backend
