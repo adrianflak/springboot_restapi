@@ -40,14 +40,25 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             ls -lah
-            cd java
-            git pull origin main
-            cd backend
-            mvn clean package
-            sudo docker build --rm -t spring-mongodb-image -f Dockerfile .
-            cd ..
-            sudo docker-compose down
-            sudo docker-compose up -d --build
+            
+            cd ~            
+            if [! "springboot_restapi/.git"]; then
+              git clone git@github.com:adrianflak/springboot_restapi.git
+            else
+              echo "Repozytorium istnieje, wykonuje git pull"
+              cd springboot_restapi
+              git pull origin main
+              cd ..
+            fi
+
+            #cd java
+            #git pull origin main
+            #cd backend
+            #mvn clean package
+            #sudo docker build --rm -t spring-mongodb-image -f Dockerfile .
+            #cd ..
+            #sudo docker-compose down
+            #sudo docker-compose up -d --build
           
 
           
