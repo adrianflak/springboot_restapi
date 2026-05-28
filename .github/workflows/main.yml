@@ -1,4 +1,4 @@
-name: Build and Deploy Spring Application New
+name: Build and Deploy Spring Application New 1
 on:
   push:
     branches:
